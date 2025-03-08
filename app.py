@@ -22,7 +22,7 @@ def main():
     if username:
         if username not in st.session_state.scores:
             st.session_state.scores[username] = {
-                "target_number": random.randint(1, 100),
+                "target_number": random.randint(1, 50),
                 "attempts": 0,
                 "game_over": False,
                 "total_score": 0,
