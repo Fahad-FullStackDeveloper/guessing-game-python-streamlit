@@ -22,7 +22,7 @@ def main():
     if username:
         if username not in st.session_state.scores:
             st.session_state.scores[username] = {
-                "target_number": random.randint(1, 50),
+                "target_number": random.randint(1, 100),
                 "attempts": 0,
                 "game_over": False,
                 "total_score": 0,
@@ -31,9 +31,9 @@ def main():
         
         user_data = st.session_state.scores[username]
         
-        st.write("Guess a number between 1 and 50")
+        st.write("Guess a number between 1 and 100")
         
-        guess = st.number_input("Enter your guess:", min_value=1, max_value=50, step=1, key=f"guess_{username}")
+        guess = st.number_input("Enter your guess:", min_value=1, max_value=100, step=1, key=f"guess_{username}")
         
         if st.button("Submit Guess", key=f"submit_guess_{username}") and not user_data["game_over"]:
             user_data["attempts"] += 1
